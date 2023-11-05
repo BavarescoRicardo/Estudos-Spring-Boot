@@ -6,5 +6,7 @@
 </head>
 <body>
     <p th:text="|Hello, ${name}!|" />
+    <div th:replace="fragments/lateral">This content will be gone</div>
+    <div th:replace="fragments/header :: header">...</div>
 </body>
 </html>
