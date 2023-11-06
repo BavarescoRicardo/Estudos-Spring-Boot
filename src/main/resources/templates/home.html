@@ -7,12 +7,26 @@
 </head>
 <body class="container">
     <!-- <div th:replace="fragments/header :: header">...</div>         -->
-    <h1>Inicio - Estudos Spring Boot -</h1>
-    <hr>
+    <header>
+        <h1>Inicio - Estudos Spring Boot -</h1>
+        <hr>
+    </header>
     
     <aside class="col-md-3">
         <div th:replace="fragments/lateral"></div>
-        <!-- <p th:text="|Hello, ${name}!|" /> -->
+        <p th:text="|Parametro: ${name}" />
     </aside>
+
+    <div class="conteudo">
+        <div th:if="${name} eq 'CADASTRO'">
+            <div th:replace="fragments/usuario/cadastro"></div>
+        </div>  
+        <div th:if="${name} eq 'LISTAR'">
+            <div th:replace="fragments/usuario/listar"></div>
+        </div> 
+        <div th:if="${name} eq 'EDITAR'">
+            <div th:replace="fragments/usuario/editar"></div>
+        </div>                 
+    </div>
 </body>
 </html>
