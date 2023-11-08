@@ -17,16 +17,5 @@
         <p th:text="|Parametro: ${name}" />
     </aside>
 
-    <div class="conteudo">
-        <div th:if="${name} eq 'CADASTRO'">
-            <div th:replace="fragments/usuario/cadastro"></div>
-        </div>  
-        <div th:if="${name} eq 'LISTAR'">
-            <div th:replace="fragments/usuario/listar"></div>
-        </div> 
-        <div th:if="${name} eq 'EDITAR'">
-            <div th:replace="fragments/usuario/editar"></div>
-        </div>                 
-    </div>
 </body>
 </html>

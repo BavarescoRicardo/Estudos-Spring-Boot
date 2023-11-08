@@ -8,8 +8,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 
+	@GetMapping("/")
+	public String inicioBarra(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+		model.addAttribute("name", name);
+		return "home";
+	}
+
 	@GetMapping("/home")
-	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+	public String inicio(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		model.addAttribute("name", name);
 		return "home";
 	}	
